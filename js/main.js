@@ -109,17 +109,6 @@ function down(d,i) {
     //update the x scale domain
     x.domain([0, d3.max(d.children, d=>{return d.value; })]).nice();
 
-    //fix for format values at x for various magnutude
-    var formatSI = d3.format("$.2s") //SI-prefix with two significant digits (The International System of Units)
-    function formatAbbreviation(x) {
-        var s = formatSI(x);
-        switch (s[s.length - 1]) {
-            case "G": return s.slice(0, -1) + "B"; //replace G with B
-            case "k": return s.slice(0, -1) + "K"; //replace k with K
-        }
-        return s;
-    }
-
     //initialize or update the axis
     svg.selectAll(".x.axis")
         .transition().duration(duration)
@@ -252,9 +241,12 @@ function bar(d){
         .attr("font-size", 10)
         .attr("fill", "Black"); //font size ties to body/bootstrap
 
+    //bar set
     bar.append("rect")
         .attr("width", d=>{return x(d.value); })
-        .attr("height", barHeight);
+        .attr("height", barHeight)
+        .append("title") //simple tooltip
+        .text(d=>{return d.data.name + " : " + formatAbbreviation(d.value);}); //simple tooltip
 
     return bar;
 }
@@ -271,6 +263,5 @@ function stack(i){
 
 //to do
 //stagger
-//tool tip
 //hilite bar where point is placed
 //change data to csv
