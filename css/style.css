@@ -1,0 +1,31 @@
+#chart-area svg {
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#logo {
+	height:50px;
+}
+
+.navbar-brand {
+	height: 60px;
+	padding: 5px 0px;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+  /*x axis lable only, y axis is not use this but use rect dependent label (text)*/
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: DimGray;
+  stroke-width: 0.8;
+}
+
+rect.background {
+	fill: white;
+}

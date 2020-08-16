@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>Interactive Bar Chart</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img id="logo" src="img/logo.png"></a>      
+        </div>
+    </nav>
+
+    <!-- Bootstrap grid setup -->
+    <div class="container">
+        <div clsss="row">
+            <h3>Hierarchical bar chart</h3>
+            <p>Click blue bar for drill down to child node. Click background in the graph back to parent node<br>Cursor turns to pointer when it's activated to change nodes</p>
+        </div>
+        <div class="row">
+            <div id="chart-area"></div>
+        </div>
+        <div>
+            <p class = "text-muted">reference : https://observablehq.com/@d3/hierarchical-bar-chart<br>version : d3.js v4<br>data : flare.json</p>
+        </div>
+    </div>
+
+<!-- External JS libraries -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
